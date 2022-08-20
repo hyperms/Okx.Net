@@ -1,0 +1,1211 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Okx.Net</name>
+    </assembly>
+    <members>
+        <member name="T:Okx.Net.Clients.OkxClient">
+            <inheritdoc cref="T:Okx.Net.Interfaces.Clients.IOkxClient" />
+        </member>
+        <member name="P:Okx.Net.Clients.OkxClient.PerpetualApi">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.OkxClient.#ctor">
+            <summary>
+            Create a new instance of KucoinClient using the default options
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Clients.OkxClient.#ctor(Okx.Net.Objects.OkxClientOptions)">
+            <summary>
+            Create a new instance of KucoinClient using provided options
+            </summary>
+            <param name="options">The options to use for this client</param>
+        </member>
+        <member name="M:Okx.Net.Clients.OkxClient.SetApiCredentials(Okx.Net.Objects.OkxApiCredentials)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.OkxClient.SetDefaultOptions(Okx.Net.Objects.OkxClientOptions)">
+            <summary>
+            Set the default options to be used when creating new clients
+            </summary>
+            <param name="options">Options to use as default</param>
+        </member>
+        <member name="M:Okx.Net.Clients.OkxClient.ParseErrorResponse(Newtonsoft.Json.Linq.JToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Okx.Net.Clients.OkxSocketClient">
+            <inheritdoc cref="T:Okx.Net.Interfaces.Clients.IOkxSocketClient" />
+        </member>
+        <member name="P:Okx.Net.Clients.OkxSocketClient.PerpetualStreams">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.#ctor">
+            <summary>
+            Create a new instance of KucoinSocketClient using the default options
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.#ctor(Okx.Net.Objects.OkxSocketClientOptions)">
+            <summary>
+            Create a new instance of KucoinSocketClient using provided options
+            </summary>
+            <param name="options">The options to use for this client</param>
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.SetDefaultOptions(Okx.Net.Objects.OkxSocketClientOptions)">
+            <summary>
+            Set the default options to be used when creating new clients
+            </summary>
+            <param name="options">Options to use as default</param>
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.SetApiCredentials(Okx.Net.Objects.OkxApiCredentials)">
+            <summary>
+            Set the API credentials to use in this client
+            </summary>
+            <param name="credentials">Credentials to use</param>
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.GetConnectionUrlAsync(CryptoExchange.Net.SocketApiClient,System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.GetReconnectUriAsync(CryptoExchange.Net.SocketApiClient,CryptoExchange.Net.Sockets.SocketConnection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.HandleQueryResponse``1(CryptoExchange.Net.Sockets.SocketConnection,System.Object,Newtonsoft.Json.Linq.JToken,CryptoExchange.Net.Objects.CallResult{``0}@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.HandleSubscriptionResponse(CryptoExchange.Net.Sockets.SocketConnection,CryptoExchange.Net.Sockets.SocketSubscription,System.Object,Newtonsoft.Json.Linq.JToken,CryptoExchange.Net.Objects.CallResult{System.Object}@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.MessageMatchesHandler(CryptoExchange.Net.Sockets.SocketConnection,Newtonsoft.Json.Linq.JToken,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.MessageMatchesHandler(CryptoExchange.Net.Sockets.SocketConnection,Newtonsoft.Json.Linq.JToken,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.AuthenticateSocketAsync(CryptoExchange.Net.Sockets.SocketConnection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.OkxSocketClient.UnsubscribeAsync(CryptoExchange.Net.Sockets.SocketConnection,CryptoExchange.Net.Sockets.SocketSubscription)">
+            <inheritdoc />
+        </member>
+        <member name="T:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApi">
+            <inheritdoc cref="T:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApi" />
+        </member>
+        <member name="E:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApi.OnOrderPlaced">
+            <summary>
+            Event triggered when an order is placed via this client. Only available for Spot orders
+            </summary>
+        </member>
+        <member name="E:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApi.OnOrderCanceled">
+            <summary>
+            Event triggered when an order is canceled via this client. Note that this does not trigger when using CancelAllOrdersAsync. Only available for Spot orders
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApi.ExchangeName">
+            <inheritdoc />
+        </member>
+        <member name="P:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApi.Account">
+            <inheritdoc />
+        </member>
+        <member name="P:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApi.ExchangeData">
+            <inheritdoc />
+        </member>
+        <member name="P:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApi.Trading">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApi.CreateAuthenticationProvider(CryptoExchange.Net.Authentication.ApiCredentials)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApi.GetServerTimestampAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApi.GetTimeSyncInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApi.GetTimeOffset">
+            <inheritdoc />
+        </member>
+        <member name="T:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiAccount">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiAccount.GetBalanceAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiAccount.GetPositionsAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiAccount.SetLeverageAsync(System.String,System.Int32,Okx.Net.Enums.MarginMode,Okx.Net.Enums.PositionSide,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiExchangeData">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiExchangeData.GetSymbolsAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiExchangeData.GetSymbolAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiExchangeData.GetServerTimeAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiExchangeData.GetKlinesAsync(System.String,Okx.Net.Enums.KlineInterval,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiTrading">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiTrading.PlaceOrderAsync(System.String,Okx.Net.Enums.OrderSide,Okx.Net.Enums.PositionSide,Okx.Net.Enums.OrderType,Okx.Net.Enums.MarginMode,System.Decimal,System.Nullable{System.Decimal},System.Nullable{System.Boolean},System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiTrading.CancelOrderAsync(System.String,System.Int64,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiTrading.GetOrdersAsync(System.String,System.Nullable{Okx.Net.Enums.OrderStatus},System.Nullable{Okx.Net.Enums.OrderType},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiTrading.GetOrderAsync(System.String,System.Int64,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxClientPerpetualApiTrading.GetOrderByClientOrderIdAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Okx.Net.Clients.PerpetualApi.OkxSocketClientPerpetualStreams">
+            <inheritdoc cref="T:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxSocketClientPerpetualStreams" />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxSocketClientPerpetualStreams.CreateAuthenticationProvider(CryptoExchange.Net.Authentication.ApiCredentials)">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Clients.PerpetualApi.OkxSocketClientPerpetualStreams.SubscribeToTickerUpdatesAsync(System.String,System.Action{Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Okx.Net.Enums.KlineInterval">
+            <summary>
+            Kline interval
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.OneMinute">
+            <summary>
+            One minute
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.ThreeMinute">
+            <summary>
+            Three minute
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.FiveMinutes">
+            <summary>
+            Five minute
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.FifteenMinutes">
+            <summary>
+            Fifteen minutes
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.ThirtyMinutes">
+            <summary>
+            Thirty minutes
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.OneHour">
+            <summary>
+            One hour
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.TwoHours">
+            <summary>
+            Two hours
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.FourHours">
+            <summary>
+            Four hours
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.SixHours">
+            <summary>
+            Six hours
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.TwelveHours">
+            <summary>
+            Twelve hours
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.OneDay">
+            <summary>
+            One day
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.TwoDay">
+            <summary>
+            Two day
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.ThreeDay">
+            <summary>
+            Three day
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.OneWeek">
+            <summary>
+            One week
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.OneMonth">
+            <summary>
+            One month
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.ThreeMonth">
+            <summary>
+            Three month
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.SixMonth">
+            <summary>
+            Six month
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.KlineInterval.OneYear">
+            <summary>
+            One year
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Enums.MarginMode">
+            <summary>
+            Mode of Margin
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.MarginMode.Cross">
+            <summary>
+            Cross Mode
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.MarginMode.Isolated">
+            <summary>
+            Isolated Mode, This mode is not supported by platform yet.
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Enums.OrderSide">
+            <summary>
+            Order side
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.OrderSide.Buy">
+            <summary>
+            Buy order
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.OrderSide.Sell">
+            <summary>
+            Sell order
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Enums.OrderType">
+            <summary>
+            New order type
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.OrderType.Limit">
+            <summary>
+            Limit order
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Enums.OrderType.Market">
+            <summary>
+            Market order
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Enums.PositionSide">
+            <summary>
+            Okx position side
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Interfaces.Clients.IOkxClient">
+            <summary>
+            Client for accessing the Okx Rest API. 
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Interfaces.Clients.IOkxClient.PerpetualApi">
+            <summary>
+            Perpetual API endpoints
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Interfaces.Clients.IOkxSocketClient">
+            <summary>
+            Okx perpetual stream interface
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Interfaces.Clients.IOkxSocketClient.PerpetualStreams">
+            <summary>
+            Perpetual streams
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApi">
+            <summary>
+            Okx perpetual API endpoints
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApi.Account">
+            <summary>
+            Endpoints related to account settings, info or actions
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApi.ExchangeData">
+            <summary>
+            Endpoints related to retrieving market data
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApi.Trading">
+            <summary>
+            Endpoints related to orders and trades
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiAccount">
+            <summary>
+            Okx Perprtual account endpoints. Account endpoints include balance info, position info
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiAccount.GetBalanceAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets account balances
+            <para><a href="https://okx.com/docs/en/#rest-api-account-get-balance" /></para>
+            </summary>
+            <param name="currency">Single currency or multiple currencies (no more than 20) separated with comma, e.g. BTC or BTC,ETH</param>
+            <param name="ct">Cancellation token</param>
+            <returns>List of balances</returns>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiAccount.GetPositionsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Retrieve information on your positions
+            <para><a href="https://okx.com/docs/en/#rest-api-account-get-positions" /></para>
+            </summary>
+            <param name="ct">Cancellation token</param>
+            <returns>Position info</returns>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiAccount.SetLeverageAsync(System.String,System.Int32,Okx.Net.Enums.MarginMode,Okx.Net.Enums.PositionSide,System.Threading.CancellationToken)">
+            <summary>
+            Set symbol levereage
+            <para><a href="https://www.okx.com/docs/en/#rest-api-account-set-leverage" /></para>
+            </summary>
+            <param name="symbol">Symbol</param>
+            <param name="leverage">Leverage</param>
+            <param name="marginMode">Margin mode</param>
+            <param name="positionSide">Position side</param>
+            <param name="ct">Cancellation token</param>
+            <returns>Position info</returns>
+        </member>
+        <member name="T:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiExchangeData">
+            <summary>
+            Okx perpetual exchange data endpoints. Exchange data includes market data (tickers, order books, etc) and system status.
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiExchangeData.GetSymbolsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get symbol list
+            <para><a href="https://www.okx.com/docs/en/#rest-api-market-data-get-tickers" /></para>
+            </summary>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiExchangeData.GetSymbolAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get a symbol
+            <para><a href="https://www.okx.com/docs/en/#rest-api-market-data-get-ticker" /></para>
+            </summary>
+            <param name="symbol">Symbol of the contract</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiExchangeData.GetServerTimeAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get the server time
+            <para><a href="https://www.okx.com/docs/en/#rest-api-public-data-get-system-time" /></para>
+            </summary>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiExchangeData.GetKlinesAsync(System.String,Okx.Net.Enums.KlineInterval,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get kline data
+            <para><a href="https://www.okx.com/docs/en/#rest-api-market-data-get-candlesticks" /></para>
+            </summary>
+            <param name="symbol">Symbol</param>
+            <param name="interval">Interval of the klines</param>
+            <param name="startTime">Start time to retrieve klines from</param>
+            <param name="endTime">End time to retrieve klines for</param>
+            <param name="limit">Number of results per request</param>
+            <param name="ct">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="T:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiTrading">
+            <summary>
+            Okx Perpetual trading endpoints, placing and mananging orders.
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiTrading.PlaceOrderAsync(System.String,Okx.Net.Enums.OrderSide,Okx.Net.Enums.PositionSide,Okx.Net.Enums.OrderType,Okx.Net.Enums.MarginMode,System.Decimal,System.Nullable{System.Decimal},System.Nullable{System.Boolean},System.String,System.Threading.CancellationToken)">
+            <summary>
+            Place a new order
+            <para><a href="https://www.okx.com/docs-v5/en/#rest-api-trade-place-order" /></para>
+            </summary>
+            <param name="symbol">The contract for the order</param>
+            <param name="side">Side of the order</param>
+            <param name="positionSide">Position side of the order</param>
+            <param name="type">Type of order</param>
+            <param name="marginMode">Margin mode of order</param>
+            <param name="price">Limit price, only for limit orders</param>
+            <param name="quantity">Quantity of contract to buy or sell</param>
+            <param name="reduceOnly">A mark to reduce the position size only. Set to false by default</param>
+            <param name="clientOrderId">Client order id</param>
+            <param name="ct">Cancellation token</param>
+            <returns>Order details</returns>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiTrading.CancelOrderAsync(System.String,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Cancel an order
+            <para><a href="https://www.okx.com/docs/en/#rest-api-trade-cancel-order" /></para>
+            </summary>
+            <param name="symbol">symbol of the order to cancel</param>
+            <param name="orderId">Id of the order to cancel</param>
+            <param name="ct">Cancellation token</param>
+            <returns>Canceled id</returns>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiTrading.GetOrdersAsync(System.String,System.Nullable{Okx.Net.Enums.OrderStatus},System.Nullable{Okx.Net.Enums.OrderType},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Get list of orders
+            <para><a href="https://www.okx.com/docs-v5/en/#rest-api-trade-get-order-history-last-3-months" /></para>
+            </summary>
+            <param name="symbol">Filter by symbol</param>
+            <param name="status">Filter by status</param>
+            <param name="type">Filter by type</param>
+            <param name="startTime">Filter by start time</param>
+            <param name="endTime">Filter by end time</param>
+            <param name="limit">limit of orders</param>
+            <param name="ct">Cancellation token</param>
+            <returns>List of orders</returns>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiTrading.GetOrderAsync(System.String,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Get details on an order
+            <para><a href="https://www.okx.com/docs/en/#rest-api-trade-get-order-details" /></para>
+            </summary>
+            <param name="symbol">symbol of order</param>
+            <param name="orderId">Id of order to retrieve</param>
+            <param name="ct">Cancellation token</param>
+            <returns>List of orders</returns>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxClientPerpetualApiTrading.GetOrderByClientOrderIdAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get details on an order
+            <para><a href="https://www.okx.com/docs/en/#rest-api-trade-get-order-details" /></para>
+            </summary>
+            <param name="symbol">symbol of order</param>
+            <param name="clientOrderId">Client order id of order to retrieve</param>
+            <param name="ct">Cancellation token</param>
+            <returns>List of orders</returns>
+        </member>
+        <member name="T:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxSocketClientPerpetualStreams">
+            <summary>
+            Futures streams
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Interfaces.Clients.PerpetualApi.IOkxSocketClientPerpetualStreams.SubscribeToTickerUpdatesAsync(System.String,System.Action{Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick},System.Threading.CancellationToken)">
+            <summary>
+            Subscribe to ticker updates
+            <para><a href="https://www.okx.com/docs-v5/en/#websocket-api-public-channel-tickers-channel" /></para>
+            </summary>
+            <param name="symbol">The symbol to subscribe on</param>
+            <param name="onData">The data handler</param>
+            <param name="ct">Cancellation token for closing this subscription</param>
+            <returns>A stream subscription. This stream subscription can be used to be notified when the socket is disconnected/reconnected and to unsubscribe</returns>
+        </member>
+        <member name="T:Okx.Net.Objects.Internal.OkxSubscribeResponse">
+            <summary>
+            Okx stream subscribe
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Internal.OkxSubscribeResponse.Success">
+            <summary>
+            On success
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Internal.OkxSubscribeResponse.Event">
+            <summary>
+            Event of stream
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Internal.OkxSubscribeResponse.ErrorCode">
+            <summary>
+            code of result
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Internal.OkxSubscribeResponse.ErrorMessage">
+            <summary>
+            message of result
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Internal.OkxSocketUpdateResponse`1">
+            <summary>
+            Okx stream update
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Internal.OkxSocketUpdateResponse`1.Data">
+            <summary>
+            Response data
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.OkxSystemTime">
+            <summary>
+            Okx system time
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.OkxSystemTime.SystemTime">
+            <summary>
+            System time
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxBalance">
+            <summary>
+            balance info
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxBalance.UpdateTime">
+            <summary>
+            Update time of account information
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxBalance.Currency">
+            <summary>
+            Currency
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxBalance.Available">
+            <summary>
+            Available equity of the currency
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxBalance.Frozen">
+            <summary>
+            Frozen balance of the currency
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxBalanceResult">
+            <summary>
+            Okx balance result
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxBalanceResult.Details">
+            <summary>
+            Details
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxBalanceResult.Total">
+            <summary>
+            Total equity in USD
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxBalanceResult.UpdateTime">
+            <summary>
+            Update time of account information
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxKline">
+            <summary>
+            kline detail
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxKline.OpenTime">
+            <summary>
+            Opening time of the candlestick
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxKline.OpenPrice">
+            <summary>
+            Open price
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxKline.HighPrice">
+            <summary>
+            highest price
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxKline.LowPrice">
+            <summary>
+            Lowest price
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxKline.ClosePrice">
+            <summary>
+            Close price
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxKline.Volume">
+            <summary>
+            Trading volume, with a unit of contract
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxBaseOrder">
+            <summary>
+            Okx base order
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxBaseOrder.Id">
+            <summary>
+            The id of the order
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxBaseOrder.ClientOrderId">
+            <summary>
+            The client order id of the order
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxNewOrder">
+            <summary>
+            Okx new order
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxNewOrder.Code">
+            <summary>
+            The code of the request
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxCancelOrder">
+            <summary>
+            Okx cancel order
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxCancelOrder.Code">
+            <summary>
+            The code of the request
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxOrder">
+            <summary>
+            Okx order
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.InstrumentType">
+            <summary>
+            Instrument type
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.Symbol">
+            <summary>
+            Symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.Price">
+            <summary>
+            Price
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.AveragePrice">
+            <summary>
+            Average filled price
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.Quantity">
+            <summary>
+            Quantity
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.FilledQuantity">
+            <summary>
+            Accumulated fill quantity
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.Side">
+            <summary>
+            Order side
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.Type">
+            <summary>
+            Order type
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.Leverage">
+            <summary>
+            Leverage
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.Fee">
+            <summary>
+            fee
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.Status">
+            <summary>
+            The status of the order
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.UpdateTime">
+            <summary>
+            Update time
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxOrder.CreateTime">
+            <summary>
+            Creation time
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxPerpetualExchangeInfo">
+            <summary>
+            Okx exchange info
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPerpetualExchangeInfo.TimeZone">
+            <summary>
+            The timezone the server uses
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPerpetualExchangeInfo.ServerTime">
+            <summary>
+            The current server time
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPerpetualExchangeInfo.ExchangeFilters">
+            <summary>
+            Filters
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxPosition">
+            <summary>
+            position info
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.Id">
+            <summary>
+            Position ID
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.MarginMode">
+            <summary>
+            Margin mode: cross, isolated
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.InstrumentType">
+            <summary>
+            Instrument type
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.PositionSide">
+            <summary>
+            Position side: long, short, net 
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.Quantity">
+            <summary>
+            Quantity of positions. In the mode of autonomous transfer from position to position, after the deposit is transferred, a position with pos of 0 will be generated
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.AvailableQuantity">
+            <summary>
+            Position that can be closed
+            Only applicable to MARGIN, FUTURES/SWAP in the long-short mode, OPTION in Simple and isolated OPTION in margin Account.
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.Symbol">
+            <summary>
+            Symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.AverageOpenPrice">
+            <summary>
+            Average open price
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.MarkPrice">
+            <summary>
+            Mark price
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.UnrealizedPnl">
+            <summary>
+            Unrealized profit and loss
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.UnrealizedPnlRatio">
+            <summary>
+            Unrealized profit and loss ratio
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.InstrumentId">
+            <summary>
+            Instrument ID, e.g. BTC-USD-180216
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.Leverage">
+            <summary>
+            Leverage, not applicable to OPTION
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.LiquidationPrice">
+            <summary>
+            Estimated liquidation price
+            Not applicable to OPTION
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.CreationTime">
+            <summary>
+            Creation time
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxPosition.UpdateTime">
+            <summary>
+            Latest time position was adjusted
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxSetLeverageResult">
+            <summary>
+            Okx set leverage result
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSetLeverageResult.Symbol">
+            <summary>
+            Symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSetLeverageResult.Leverage">
+            <summary>
+            Leverage
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSetLeverageResult.MarginMode">
+            <summary>
+            Margin mode
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSetLeverageResult.PositionSide">
+            <summary>
+            Position side
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxSymbol">
+            <summary>
+            symbol info
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSymbol.Symbol">
+            <summary>
+            Symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSymbol.BaseAsset">
+            <summary>
+            Base asset of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSymbol.QuoteAsset">
+            <summary>
+            Quote asset of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSymbol.MinSize">
+            <summary>
+            Minimum size of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSymbol.TickSize">
+            <summary>
+            Tick size of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSymbol.LotSize">
+            <summary>
+            Lot size of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSymbol.Multiplier">
+            <summary>
+            Multiplier of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxSymbol.Leverage">
+            <summary>
+            Leverage of symbol
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.OkxTicker">
+            <summary>
+            ticker info
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxTicker.Symbol">
+            <summary>
+            Symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.OkxTicker.LastPrice">
+            <summary>
+            Last traded price
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick">
+            <summary>
+            Okx stream tick
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.Symbol">
+            <summary>
+            Name of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.LastPrice">
+            <summary>
+            Last price of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.LastSize">
+            <summary>
+            Last size of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.AskPrice">
+            <summary>
+            Ask price of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.AskSize">
+            <summary>
+            Ask size of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.BidPrice">
+            <summary>
+            Bid price of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.BidSize">
+            <summary>
+            Bid size of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.Open">
+            <summary>
+            Open price in 24h of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.High">
+            <summary>
+            High price in 24h of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.Low">
+            <summary>
+            Low price in 24h of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.VolumeCurrency">
+            <summary>
+            Base Volume
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.Volume">
+            <summary>
+            Quote Volume
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.OpenPriceUtc0">
+            <summary>
+            Open price utc0 of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.OpenPriceUtc8">
+            <summary>
+            Open price utc8 of symbol
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.Models.Perpetual.Socket.OkxStreamPerpetualTick.Time">
+            <summary>
+            Update time of symbol
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.OkxApiAddresses">
+            <summary>
+            Api addresses
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.OkxApiAddresses.PerpetualRestClientAddress">
+            <summary>
+            The address used by the OkxClient for the Perpetual API
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.OkxApiAddresses.PerpetualSocketClientAddress">
+            <summary>
+            The address used by the OkxSocketClient for the Perpetual API
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Objects.OkxApiAddresses.Default">
+            <summary>
+            The default addresses to connect to the okx.com API
+            </summary>
+        </member>
+        <member name="F:Okx.Net.Objects.OkxApiAddresses.TestNet">
+            <summary>
+            The addresses to connect to the binance testnet
+            </summary>
+        </member>
+        <member name="T:Okx.Net.Objects.OkxApiCredentials">
+            <summary>
+            Credentials for the Okx API
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.OkxApiCredentials.PassPhrase">
+            <summary>
+            The pass phrase
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxApiCredentials.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Creates new api credentials. Keep this information safe.
+            </summary>
+            <param name="apiKey">The API key</param>
+            <param name="apiSecret">The API secret</param>
+            <param name="apiPassPhrase">The API passPhrase</param>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxApiCredentials.#ctor(System.IO.Stream,System.String,System.String,System.String)">
+            <summary>
+            Create Api credentials providing a stream containing json data. The json data should include three values: apiKey, apiSecret and apiPassPhrase
+            </summary>
+            <param name="inputStream">The stream containing the json data</param>
+            <param name="identifierKey">A key to identify the credentials for the API. For example, when set to `okxKey` the json data should contain a value for the property `okxKey`. Defaults to 'apiKey'.</param>
+            <param name="identifierSecret">A key to identify the credentials for the API. For example, when set to `okxSecret` the json data should contain a value for the property `okxSecret`. Defaults to 'apiSecret'.</param>
+            <param name="identifierPassPhrase">A key to identify the credentials for the API. For example, when set to `okxPass` the json data should contain a value for the property `okxPass`. Defaults to 'apiPassPhrase'.</param>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxApiCredentials.Copy">
+            <inheritdoc />
+        </member>
+        <member name="T:Okx.Net.Objects.OkxClientOptions">
+            <summary>
+            Options for the Okx client
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.OkxClientOptions.Default">
+            <summary>
+            Default options for the spot client
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.OkxClientOptions.ReceiveWindow">
+            <summary>
+            The default receive window for requests
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.OkxClientOptions.PerpetualApiOptions">
+            <summary>
+            Usd futures API options
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxClientOptions.#ctor">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxClientOptions.#ctor(Okx.Net.Objects.OkxClientOptions)">
+            <summary>
+            ctor
+            </summary>
+            <param name="baseOn">Base the new options on other options</param>
+        </member>
+        <member name="T:Okx.Net.Objects.OkxSocketClientOptions">
+            <summary>
+            Options for the KucoinSocketClient
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.OkxSocketClientOptions.Default">
+            <summary>
+            Default options for the spot client
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.OkxSocketClientOptions.ApiCredentials">
+            <inheritdoc />
+        </member>
+        <member name="P:Okx.Net.Objects.OkxSocketClientOptions.PerpetualStreamsOptions">
+            <summary>
+            Futures stream options
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxSocketClientOptions.#ctor">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxSocketClientOptions.#ctor(Okx.Net.Objects.OkxSocketClientOptions)">
+            <summary>
+            ctor
+            </summary>
+            <param name="baseOn">Base the new options on other options</param>
+        </member>
+        <member name="T:Okx.Net.Objects.OkxApiClientOptions">
+            <summary>
+            Binance API client options
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.OkxApiClientOptions.TimestampOffset">
+            <summary>
+            A manual offset for the timestamp. Should only be used if AutoTimestamp and regular time synchronization on the OS is not reliable enough
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.OkxApiClientOptions.TradeRulesUpdateInterval">
+            <summary>
+            How often the trade rules should be updated. Only used when TradeRulesBehaviour is not None
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxApiClientOptions.#ctor">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxApiClientOptions.#ctor(System.String)">
+            <summary>
+            ctor
+            </summary>
+            <param name="baseAddress"></param>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxApiClientOptions.#ctor(Okx.Net.Objects.OkxApiClientOptions,Okx.Net.Objects.OkxApiClientOptions)">
+            <summary>
+            ctor
+            </summary>
+            <param name="baseOn"></param>
+            <param name="newValues"></param>
+        </member>
+        <member name="T:Okx.Net.Objects.OkxSocketApiClientOptions">
+            <summary>
+            Socket client options
+            </summary>
+        </member>
+        <member name="P:Okx.Net.Objects.OkxSocketApiClientOptions.ApiCredentials">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.Objects.OkxSocketApiClientOptions.#ctor">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxSocketApiClientOptions.#ctor(System.String)">
+            <summary>
+            ctor
+            </summary>
+            <param name="baseAddress"></param>
+        </member>
+        <member name="M:Okx.Net.Objects.OkxSocketApiClientOptions.#ctor(Okx.Net.Objects.OkxSocketApiClientOptions,Okx.Net.Objects.OkxSocketApiClientOptions)">
+            <summary>
+            ctor
+            </summary>
+            <param name="baseOn"></param>
+            <param name="newValues"></param>
+        </member>
+        <member name="T:Okx.Net.OkxAuthenticationProvider">
+            <inheritdoc />
+        </member>
+        <member name="M:Okx.Net.OkxAuthenticationProvider.#ctor(Okx.Net.Objects.OkxApiCredentials)">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:Okx.Net.OkxAuthenticationProvider.AuthenticateRequest(CryptoExchange.Net.RestApiClient,System.Uri,System.Net.Http.HttpMethod,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean,CryptoExchange.Net.Objects.ArrayParametersSerialization,CryptoExchange.Net.Objects.HttpMethodParameterPosition,System.Collections.Generic.SortedDictionary{System.String,System.Object}@,System.Collections.Generic.SortedDictionary{System.String,System.Object}@,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
